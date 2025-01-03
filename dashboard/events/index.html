@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Events - Threedots</title>
+    <meta name="description" content="View latest events and promotions">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-[#1A1F2C] text-white p-4">
+    <!-- Header Section -->
+    <header class="flex items-center gap-4 mb-8">
+        <div class="cursor-pointer" onclick="window.location.href='index.html'">
+            <i data-lucide="arrow-left" class="w-6 h-6"></i>
+        </div>
+        <h1 class="text-xl font-bold">Latest Events</h1>
+    </header>
+
+    <!-- Active Events Section -->
+    <section class="mb-8">
+        <h2 class="text-lg font-semibold mb-4 text-[#00ff00]">Active Events</h2>
+        <div class="space-y-4">
+            <!-- Event Card 1 -->
+            <div class="bg-[#2A2F3C] p-4 rounded-lg border border-[#3A3F4C]">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-1">New User Welcome Bonus</h3>
+                        <p class="text-sm text-gray-400">Get extra rewards for your first week!</p>
+                    </div>
+                    <span class="bg-green-500 text-black text-xs px-2 py-1 rounded">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-3">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Ends in 6 days</span>
+                </div>
+                <button class="w-full bg-[#00ff00] text-black py-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors">
+                    Participate Now
+                </button>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="bg-[#2A2F3C] p-4 rounded-lg border border-[#3A3F4C]">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-1">Daily Task Challenge</h3>
+                        <p class="text-sm text-gray-400">Complete daily tasks for bonus rewards</p>
+                    </div>
+                    <span class="bg-green-500 text-black text-xs px-2 py-1 rounded">Active</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-3">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Ongoing Event</span>
+                </div>
+                <button class="w-full bg-[#00ff00] text-black py-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors">
+                    View Tasks
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="mb-8">
+        <h2 class="text-lg font-semibold mb-4 text-[#00ff00]">Upcoming Events</h2>
+        <div class="space-y-4">
+            <!-- Upcoming Event Card -->
+            <div class="bg-[#2A2F3C] p-4 rounded-lg border border-[#3A3F4C]">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-1">Weekend Bonus Event</h3>
+                        <p class="text-sm text-gray-400">Double rewards on all weekend tasks!</p>
+                    </div>
+                    <span class="bg-gray-500 text-white text-xs px-2 py-1 rounded">Coming Soon</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400 mb-3">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Starts in 2 days</span>
+                </div>
+                <button class="w-full bg-gray-600 text-white py-2 rounded-lg font-medium cursor-not-allowed">
+                    Coming Soon
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section>
+        <h2 class="text-lg font-semibold mb-4 text-[#00ff00]">Past Events</h2>
+        <div class="space-y-4">
+            <!-- Past Event Card -->
+            <div class="bg-[#2A2F3C] p-4 rounded-lg border border-[#3A3F4C] opacity-75">
+                <div class="flex items-start justify-between mb-3">
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-lg mb-1">New Year Special</h3>
+                        <p class="text-sm text-gray-400">Special rewards for the new year celebration</p>
+                    </div>
+                    <span class="bg-gray-500 text-white text-xs px-2 py-1 rounded">Ended</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Ended on Jan 5, 2024</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Handle button clicks
+        document.querySelectorAll('button').forEach(button => {
+            if (!button.classList.contains('cursor-not-allowed')) {
+                button.addEventListener('click', (e) => {
+                    const eventName = e.target.closest('.bg-[#2A2F3C]').querySelector('h3').textContent;
+                    console.log(`Participating in event: ${eventName}`);
+                    // Add your event participation logic here
+                });
+            }
+        });
+    </script>
+</body>
+</html>

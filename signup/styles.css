@@ -1,0 +1,137 @@
+/* Custom animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+/* Custom styles */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+}
+
+/* Transition effects */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Form input animations */
+input {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover animation */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation link hover effect */
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #8b5cf6;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Animated dots */
+@keyframes dot-bounce {
+    0%, 80%, 100% { 
+      transform: translateY(0); 
+    }
+    40% { 
+      transform: translateY(-6px); 
+    }
+  }
+  
+  .logo-dots {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #00ff00;
+    display: inline-block;
+  }
+  
+  .dot:nth-child(1) {
+    animation: dot-bounce 1.4s infinite ease-in-out both;
+  }
+  
+  .dot:nth-child(2) {
+    animation: dot-bounce 1.4s infinite ease-in-out both;
+    animation-delay: 0.2s;
+  }
+  
+  .dot:nth-child(3) {
+    animation: dot-bounce 1.4s infinite ease-in-out both;
+    animation-delay: 0.4s;
+  }

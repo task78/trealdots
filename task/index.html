@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-menu">
+        <a href="#" class="menu-item">Apps History</a>
+        <a href="#" class="menu-item active" id="launchMenuItem">To Do <span class="badge">38/38</span></a>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-title">Today's Stats</div>
+            <div class="card-value">$245.89</div>
+            <div class="card-description">Daily performance metrics</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Total Balance</div>
+            <div class="card-value">$1,234.56</div>
+            <div class="card-description">Current account balance</div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Active Tasks</div>
+            <div class="card-value">12</div>
+            <div class="card-description">Ongoing tasks and activities</div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <img src="public/lovable-uploads/49dc075e-f5ff-430c-bd5f-2e9cf80dd85d.png" alt="Active Core Cropped Tights" class="product-image">
+            <div class="launch-label">Launch</div>
+            <div class="product-title">Active Core Cropped Tights</div>
+            
+            <div class="price-row">
+                <span>Price:</span>
+                <span class="value">22.49 x2</span>
+            </div>
+            
+            <div class="earning-row">
+                <span>Earning:</span>
+                <span class="value">0.45</span>
+            </div>
+            
+            <div class="stars">★★★★★</div>
+            
+            <select class="comments-dropdown">
+                <option value="good">The product is very good.</option>
+                <option value="excellent">The quality is excellent!</option>
+                <option value="recommend">I highly recommend this product.</option>
+            </select>
+            
+            <button class="confirm-button" onclick="closeModal()">CONFIRM</button>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="nav-items">
+            <a class="nav-item">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a class="nav-item active">
+                <i data-lucide="rocket"></i>
+                <span>Task</span>
+            </a>
+            <a class="nav-item">
+                <i data-lucide="folder"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

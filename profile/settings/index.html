@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <button class="back-btn" onclick="history.back()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back
+        </button>
+        <h1>Security Settings</h1>
+    </header>
+
+    <main class="container">
+        <section class="settings-section">
+            <h2>Change Password</h2>
+            <form id="passwordForm" class="settings-form">
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit" class="save-btn">Update Password</button>
+            </form>
+        </section>
+
+        <section class="settings-section">
+            <h2>Two-Factor Authentication</h2>
+            <div class="two-factor">
+                <label class="switch">
+                    <input type="checkbox" id="twoFactorToggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Enable Two-Factor Authentication</span>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h2>Login History</h2>
+            <div class="login-history">
+                <div class="history-item">
+                    <span>Last login: Today, 2:30 PM</span>
+                    <span>Location: New York, USA</span>
+                </div>
+                <div class="history-item">
+                    <span>Previous login: Yesterday, 10:15 AM</span>
+                    <span>Location: New York, USA</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="security.js"></script>
+</body>
+</html>

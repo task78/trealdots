@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Threedots-rewardcraft</title>
+    <meta name="description" content="Earn rewards for your time and effort" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="min-h-screen bg-[#1A1F2C] text-white p-4">
+    <!-- Header Section -->
+    <header class="flex justify-between items-center mb-8">
+      <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1">
+          <div class="animate-dot-bounce"></div>
+          <div class="animate-dot-bounce" style="animation-delay: 0.2s"></div>
+          <div class="animate-dot-bounce" style="animation-delay: 0.4s"></div>
+        </div>
+        <span class="text-xl font-bold text-[#00ff00]">Threedots</span>
+      </div>
+      <div class="bg-[#2A2F3C] p-2 rounded-md">
+        <div class="grid grid-cols-2 gap-1 w-6 h-6">
+          <div class="bg-[#00ff00] rounded-sm"></div>
+          <div class="bg-[#00ff00] rounded-sm"></div>
+          <div class="bg-[#00ff00] rounded-sm"></div>
+          <div class="bg-[#00ff00] rounded-sm"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- User Info Section -->
+    <section class="mb-8">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h2 class="text-3xl font-bold mb-1">Hi, <span id="userPhone">8998366165</span></h2>
+          <p class="text-red-500" id="balance">-370.34</p>
+        </div>
+        <div class="bg-[#2A2F3C] p-2 rounded-full">
+          <img src="/placeholder.svg" alt="Profile" class="w-8 h-8 rounded-full">
+        </div>
+      </div>
+
+      <!-- Balance Cards -->
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div>
+          <p class="text-green-500 text-sm mb-1">Total Earning</p>
+          <div class="bg-[#2A2F3C] h-2 rounded-full">
+            <div class="bg-green-500 h-full w-1/4 rounded-full"></div>
+          </div>
+          <p class="mt-1" id="totalEarning">Loading...</p>
+        </div>
+        <div>
+          <p class="text-green-500 text-sm mb-1">In Process Amount</p>
+          <div class="bg-[#2A2F3C] h-2 rounded-full">
+            <div class="bg-green-500 h-full w-3/4 rounded-full"></div>
+          </div>
+          <p class="mt-1" id="inProcessAmount">999.75</p>
+        </div>
+      </div>
+
+      <!-- VIP Level -->
+      <div class="bg-[#2A2F3C] p-4 mb-6 rounded-lg cursor-pointer" onclick="handleVIPClick()">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <div class="bg-blue-500 p-2 rounded-md">
+              <span class="text-xl">🏆</span>
+            </div>
+            <span>VIP0</span>
+          </div>
+          <span class="text-xl">›</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="grid grid-cols-3 gap-4 mb-8">
+        <div class="bg-[#2A2F3C] p-4 rounded-lg flex flex-col items-center gap-2 cursor-pointer" onclick="handleServiceClick()">
+          <i data-lucide="headphones" class="w-6 h-6"></i>
+          <span class="text-sm">Service</span>
+        </div>
+        <div class="bg-[#2A2F3C] p-4 rounded-lg flex flex-col items-center gap-2 cursor-pointer" onclick="handleEventsClick()">
+          <i data-lucide="calendar" class="w-6 h-6"></i>
+          <span class="text-sm">Latest Events</span>
+        </div>
+        <div class="bg-[#2A2F3C] p-4 rounded-lg flex flex-col items-center gap-2 cursor-pointer" onclick="handleWithdrawalClick()">
+          <i data-lucide="banknote" class="w-6 h-6"></i>
+          <span class="text-sm">Withdrawal</span>
+        </div>
+      </div>
+
+      <!-- Other Actions -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold mb-4">Other Actions</h3>
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleHistoryClick()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="history" class="w-6 h-6"></i>
+              <span>Transaction History</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleFAQClick()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="message-square" class="w-6 h-6"></i>
+              <span>FAQ</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleTermsClick()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="file-text" class="w-6 h-6"></i>
+              <span>Terms and Conditions</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#222222] p-4">
+      <div class="flex justify-between items-center max-w-md mx-auto">
+        <div class="nav-item active cursor-pointer" onclick="handleHomeClick()">
+          <i data-lucide="home" class="w-6 h-6"></i>
+          <span class="text-xs">Home</span>
+        </div>
+        <div class="nav-item cursor-pointer" onclick="handleLaunchClick()">
+          <i data-lucide="rocket" class="w-6 h-6"></i>
+          <span class="text-xs">Task</span>
+        </div>
+        <div class="nav-item cursor-pointer" onclick="handleMyClick()">
+          <i data-lucide="folder" class="w-6 h-6"></i>
+          <span class="text-xs">Profile</span>
+        </div>
+      </div>
+    </nav>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+
+    <script src="main.js"></script>
+  </body>
+</html>

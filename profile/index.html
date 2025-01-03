@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - Threedots</title>
+    <meta name="description" content="User profile and settings" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="min-h-screen bg-[#1A1F2C] text-white p-4">
+    <!-- Header Section -->
+    <header class="flex justify-between items-center mb-8">
+      <div class="flex items-center gap-2">
+        <button onclick="window.history.back()" class="text-[#00ff00]">
+          <i data-lucide="arrow-left" class="w-6 h-6"></i>
+        </button>
+        <span class="text-xl font-bold">My Profile</span>
+      </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="mb-8">
+      <div class="flex flex-col items-center mb-8">
+        <div class="relative mb-4">
+          <div class="w-24 h-24 bg-[#2A2F3C] rounded-full overflow-hidden">
+            <img src="/placeholder.svg" alt="Profile" class="w-full h-full object-cover">
+          </div>
+          <button class="absolute bottom-0 right-0 bg-[#00ff00] p-2 rounded-full" onclick="handleEditPhoto()">
+            <i data-lucide="camera" class="w-4 h-4 text-black"></i>
+          </button>
+        </div>
+        <h2 class="text-xl font-bold mb-1">User ID: 8998366165</h2>
+        <p class="text-gray-400">Joined on Jan 2024</p>
+      </div>
+
+      <!-- Profile Menu -->
+      <div class="space-y-4">
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handlePersonalInfo()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="user" class="w-6 h-6"></i>
+              <span>Personal Information</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleSecurity()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="shield" class="w-6 h-6"></i>
+              <span>Security Settings</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleNotifications()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="bell" class="w-6 h-6"></i>
+              <span>Notification Preferences</span>
+            </div>
+            <span class="text-xl">›</span>
+          </div>
+        </div>
+
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer" onclick="handleLanguage()">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+              <i data-lucide="languages" class="w-6 h-6"></i>
+              <span>Language</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-gray-400">English</span>
+              <span class="text-xl">›</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#2A2F3C] p-4 rounded-lg cursor-pointer mt-8" onclick="handleLogout()">
+          <div class="flex justify-between items-center text-red-500">
+            <div class="flex items-center gap-2">
+              <i data-lucide="log-out" class="w-6 h-6"></i>
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-[#222222] p-4">
+      <div class="flex justify-between items-center max-w-md mx-auto">
+        <div class="nav-item cursor-pointer" onclick="handleHomeClick()">
+          <i data-lucide="home" class="w-6 h-6"></i>
+          <span class="text-xs">Home</span>
+        </div>
+        <div class="nav-item cursor-pointer" onclick="handleLaunchClick()">
+          <i data-lucide="rocket" class="w-6 h-6"></i>
+          <span class="text-xs">Task</span>
+        </div>
+        <div class="nav-item active cursor-pointer" onclick="handleMyClick()">
+          <i data-lucide="folder" class="w-6 h-6"></i>
+          <span class="text-xs">Profile</span>
+        </div>
+      </div>
+    </nav>
+
+    <script src="profile.js"></script>
+  </body>
+</html>
